@@ -9,6 +9,7 @@
 #import "GHViewController.h"
 #import "UIImageView+GH.h"
 #import "SDWebImageDecoder.h"
+#import "GHViewControllerOne.h"
 
 
 #define GHURLRequest(url) [NSURLRequest requestWithURL:[NSURL URLWithString:url]]
@@ -52,6 +53,24 @@
 //    }];
 //    
 //    [self progress];
+}
+
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    UIWindow *wd = [UIApplication sharedApplication].keyWindow;
+    NSLog(@"GHViewController %@", self.view);
+    NSLog(@"GHViewController %@", wd.subviews);
+    NSLog(@"GHViewController %@", wd.rootViewController);
+
+    GHViewControllerOne *one = [[GHViewControllerOne alloc] init];
+    [self presentViewController:one animated:YES completion:^{
+        NSLog(@"%@", one);
+        NSLog(@"%@", self.presentedViewController);
+        NSLog(@"GHViewController %@", self.view);
+        NSLog(@"GHViewController %@", wd.subviews);
+        NSLog(@"GHViewController %@", wd.rootViewController);
+    }];
 }
 
 
