@@ -25,14 +25,20 @@
     CGFloat _progress;
 }
 
+// http://a.vpimg3.com/upload/vipfashion/oi/2014/08/07/6/a989fc3bf3cde94.jpg
+// http://a.vpimg3.com/upload/vipfashion/oi/2014/08/07/143/12115f85d583ce8.jpg
+// http://a.vpimg4.com/upload/vipfashion/oi/2014/08/07/172/0f8e3dc98acd022.jpg
+// http://a.vpimg4.com/upload/vipfashion/oi/2014/08/07/175/73c7ea380f90688.jpg
+// http://a.vpimg3.com/upload/vipfashion/oi/2014/08/07/192/df569be3e8e2abf.jpg
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"placeholder.jpg"]];
     
-    UIImageView *imgView = [[UIImageView alloc] initWithFrame:self.view.bounds];
-    [imgView setImageUrl:[NSURL URLWithString:@"http://a.vpimg2.com/upload/vipfashion/oi/2014/07/18/106/4d9c2ab6d33c196.jpg"] placeHolderImage:[UIImage imageNamed:@"placeholder.jpg"]];
+    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 30, 150, 150)];
+    [imgView setImageUrl:[NSURL URLWithString:@"http://a.vpimg3.com/upload/vipfashion/oi/2014/08/07/192/df569be3e8e2abf.jpg"] placeHolderImage:[UIImage imageNamed:@"placeholder.jpg"]];
     [self.view addSubview:imgView];
     
 //    _progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
@@ -56,22 +62,22 @@
 }
 
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    UIWindow *wd = [UIApplication sharedApplication].keyWindow;
-    NSLog(@"GHViewController %@", self.view);
-    NSLog(@"GHViewController %@", wd.subviews);
-    NSLog(@"GHViewController %@", wd.rootViewController);
-
-    GHViewControllerOne *one = [[GHViewControllerOne alloc] init];
-    [self presentViewController:one animated:YES completion:^{
-        NSLog(@"%@", one);
-        NSLog(@"%@", self.presentedViewController);
-        NSLog(@"GHViewController %@", self.view);
-        NSLog(@"GHViewController %@", wd.subviews);
-        NSLog(@"GHViewController %@", wd.rootViewController);
-    }];
-}
+//- (void)viewDidAppear:(BOOL)animated
+//{
+//    UIWindow *wd = [UIApplication sharedApplication].keyWindow;
+//    NSLog(@"GHViewController %@", self.view);
+//    NSLog(@"GHViewController %@", wd.subviews);
+//    NSLog(@"GHViewController %@", wd.rootViewController);
+//
+//    GHViewControllerOne *one = [[GHViewControllerOne alloc] init];
+//    [self presentViewController:one animated:YES completion:^{
+//        NSLog(@"%@", one);
+//        NSLog(@"%@", self.presentedViewController);
+//        NSLog(@"GHViewController %@", self.view);
+//        NSLog(@"GHViewController %@", wd.subviews);
+//        NSLog(@"GHViewController %@", wd.rootViewController);
+//    }];
+//}
 
 
 - (void)progress

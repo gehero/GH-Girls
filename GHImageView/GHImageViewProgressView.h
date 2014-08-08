@@ -14,4 +14,11 @@
 
 @property (nonatomic, assign) CGFloat height;
 
+/**
+ *  更新进度
+ *
+ *  @param progress 进度百分比
+ */
+- (void)updateProgress:(CGFloat)progress;
+
 @end

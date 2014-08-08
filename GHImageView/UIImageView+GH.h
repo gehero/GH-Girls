@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+@class GHImageViewProgressView;
 @interface UIImageView (GH)
 
 - (void)setImageUrl:(NSURL *)imageUrl placeHolderImage:(UIImage *)placeHolderImage;
